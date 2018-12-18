@@ -16,6 +16,8 @@ RUN python2.7 get-pip.py
 RUN pip install supervisor                     
 RUN mkdir -p /var/log/supervisor && \
     mkdir -p /etc/supervisor/conf.d
+RUN chmod -R o+rw /var/log/supervisor && \
+    chmod -R o+rw /var/run
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN useradd -d /home/devman -m -s /bin/bash devman
 RUN ln -s /usr/bin/python3.6 /usr/bin/python
