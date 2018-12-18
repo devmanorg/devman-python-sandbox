@@ -14,8 +14,9 @@ RUN apt-get update && apt-get install -y \
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python2.7 get-pip.py
 RUN pip install supervisor                     
-RUN mkdir -p /var/log/supervisor
-COPY supervisord.conf /usr/local/etc/supervisord.conf
+RUN mkdir -p /var/log/supervisor && \
+    mkdir -p /etc/supervisor/conf.d
+COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN useradd -d /home/devman -m -s /bin/bash devman
 RUN ln -s /usr/bin/python3.6 /usr/bin/python
 RUN locale-gen en_US.UTF-8
