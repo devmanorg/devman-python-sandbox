@@ -12,11 +12,11 @@ Quick reference
 # What is devman-python-sandbox
 # How to generate this image
 ```bash
-docker build -t devman-python-sandbox base-gotty-sandbox/.
+docker build -t devmanorg/devman-python-sandbox .
 ```
 # Also you can to download image from public Docker Hub repository
 ```bash
-docker pull keinen87/devman-python-sandbox
+docker pull devmanorg/devman-python-sandbox
 ```
 # License
 
